@@ -1,5 +1,6 @@
 package com.example.mylittlebackup
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -27,13 +28,14 @@ class login_page : AppCompatActivity() {
 
             if (username == "admin" && password == "banana") {
                 Toast.makeText(this, "Bem vindo adm, tela temporaria", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Tela_principal::class.java)
+                startActivity(intent)
             }
             else {
                 Toast.makeText(this, "você errou sua senha :/", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // aaaaa
 
 
     }
