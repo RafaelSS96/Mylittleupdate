@@ -6,3 +6,5 @@ Projeto criado em kotlin para ajudar no ensino escolar
 0.1.1 = Primeira pequena mudança, direcionamento para a tela principal, começo do projeto da mesma.
 
 0.2.0 =  Criamos aqui a primeira mudança grande. Foi criada a tela de recepção de usuario e uma tela onde, a partir de uma chave aleatoria em um mapa, pode-se criar perguntas aleatorias e adicionar respostas aleatorias. Proximo grande passo é criar mais perguntas, respostas e preparar um laço when que deve ser mudado depois.
+
+0.2.1 = Foi criado o sistema de repetição de perguntas: Agora alem de novas perguntas, foi adicionado um sistema onde o usuario ao responder uma pergunta gera uma nova, sua pontuação e a passagem de questões é adicionado. Resumindo o que tentei escrever formalmente, agora o app faz mais de uma pergunta e julga as respostas como certas e erradas.
