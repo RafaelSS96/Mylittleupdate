@@ -14,3 +14,5 @@ Projeto criado em kotlin para ajudar no ensino escolar
 0.3.1 = Depois das dificuldades encontradas anteriormente, um pequeno avanço: Foi criado um contador de pontos do usuario e contador de perguntas, que o permite saber sempre quantas perguntas ja fez e quanto ja acertou alem dos toasts que anunciam pra ele. Acredito que estamos prontos para preparar a tela de resultados do usuario.
 
 0.3.2 = Correção de um bug onde a função umdetres estava sendo lida como parte da expressão gerar pergunta
+
+0.4.0= Agora foi criada a tela de resultados, que agora mostra os resultados de uma forma mais clara para o usuario. Também foram feitas diversas mudanças de desind dentro da app, entre elas cores de botões e afins.
