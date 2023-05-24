@@ -1,5 +1,6 @@
 package com.example.mylittlebackup
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -19,6 +20,7 @@ class Tela_de_questoes : AppCompatActivity() {
 
     private var contadorPerguntas = 0
     private var pontos = 0
+    private var perguntasFeitas = mutableSetOf<String>()
 
 
     private val perguntas_respostas = mapOf(
@@ -143,26 +145,33 @@ class Tela_de_questoes : AppCompatActivity() {
             Toast.makeText(this, "Resposta correta!", Toast.LENGTH_SHORT).show()
             pontos++
             acertostela.text = pontos.toString()
-            contadorPerguntas++
-            if (contadorPerguntas < quantiaperguntas) {
-                umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
-                gerarpergunta()
-                return
-            }
-
         } else {
             Toast.makeText(this, "resposta errada :/", Toast.LENGTH_SHORT).show()
-            contadorPerguntas++
-            if (contadorPerguntas < quantiaperguntas) {
-                umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
-                gerarpergunta()
-                return
-            }
+        }
+
+        contadorPerguntas++
+        if (contadorPerguntas < quantiaperguntas) {
+            umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
+            gerarpergunta()
+            return
+        } else {
+            val intent = Intent(this, Tela_resultado::class.java)
+            intent.putExtra("pontos", pontos)
+            intent.putExtra("quantiaperguntas", quantiaperguntas)
+            startActivity(intent)
+            finish()
         }
     }
 
     private fun gerarpergunta() {
-        val perguntaAleatoria = perguntas_respostas.keys.random()
+        val perguntaAleatoria = perguntas_respostas.keys.subtract(perguntasFeitas).random()
+
+
+        perguntasFeitas.add(perguntaAleatoria)
+
+        if (perguntasFeitas.size == perguntas_respostas.size) {
+            perguntasFeitas.clear()
+        }
 
         textopergunta.text = perguntaAleatoria
 

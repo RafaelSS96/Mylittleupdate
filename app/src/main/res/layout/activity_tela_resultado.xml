@@ -4,6 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_white"
     tools:context=".Tela_resultado">
+
+    <TextView
+        android:id="@+id/tituloresultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AQUI ESTÁ O SEU RESULTADO!!!"
+        android:textAlignment="center"
+        android:textColor="#DCD7D7"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoacerto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Você acertou:"
+        android:textColor="#DCD7D7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloresultado" />
+
+    <TextView
+        android:id="@+id/valoracertos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:text="aaaa"
+        android:textColor="#DCD7D7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloresultado" />
+
+    <TextView
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sua porcentagem de acertos foi de :"
+        android:textColor="#DCD7D7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textoacerto" />
+
+    <TextView
+        android:id="@+id/porcentagemacertos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:text="aaaa"
+        android:textColor="#DCD7D7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valoracertos" />
+
+    <Button
+        android:id="@+id/botaoinicial"
+        android:layout_width="166dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="#85000000"
+        android:text="Voltar para a tela inicial"
+        android:textColor="#DCD7D7"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/botaohistorico"
+        android:layout_width="166dp"
+        android:layout_height="65dp"
+        android:backgroundTint="#85000000"
+        android:text="Historico de resultados"
+        android:textColor="#DCD7D7"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_config_background"
     tools:context=".config">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:textColor="#E1DFDF"
         android:text="Defina aqui quantas perguntas você deseja responder:"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -26,8 +28,9 @@
         android:layout_marginTop="30dp"
         android:hint="1-10"
         android:inputType="number"
-        android:textColorHint="#857D7D"
+        android:textColorHint="#A6A4A4"
         android:textSize="25sp"
+        android:textColor="#FBF9F9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionconf" />
