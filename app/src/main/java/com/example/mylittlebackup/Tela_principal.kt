@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class Tela_principal : AppCompatActivity() {
 
     private lateinit var novaatividade: Button
+    private lateinit var numeroatividades: TextView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,14 +21,24 @@ class Tela_principal : AppCompatActivity() {
         setContentView(R.layout.activity_tela_principal)
 
         novaatividade = findViewById(R.id.novaatividade)
+        numeroatividades = findViewById(R.id.numeroatividades)
 
-        novaatividade.setOnClickListener {
-            val intent = Intent(this, Tela_de_questoes::class.java)
-            startActivity(intent)
+
+        var numeroQuestoes = intent.getStringExtra("numeroquestoes")
+        if (numeroQuestoes == null) {
+            numeroQuestoes = "3"
         }
+
+        numeroatividades.text = numeroQuestoes
 
         toolbar = findViewById(R.id.toolbarMenuPrincipal)
         setSupportActionBar(toolbar)
+
+        novaatividade.setOnClickListener {
+            val intent = Intent(this, Tela_de_questoes::class.java)
+            intent.putExtra("numeroquestoes",numeroQuestoes.toInt())
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -46,4 +59,6 @@ class Tela_principal : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 }

@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient_background_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_white"
     tools:context=".Tela_principal">
 
     <androidx.appcompat.widget.Toolbar
@@ -36,7 +36,7 @@
         android:id="@+id/tituloatividades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="160dp"
         android:layout_marginBottom="30dp"
         android:text="Hoje, você fez este numero de atividades:"
         android:textAlignment="center"
@@ -69,5 +69,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/totalatividades" />
 
+
+    <TextView
+        android:id="@+id/numeroatividades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="124dp"
+        android:text="aaaaa"
+        android:textColor="#ECE0E0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarMenuPrincipal" />
+
+    <TextView
+        android:layout_width="142dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="32dp"
+        android:text="Número de questões do usuario:"
+        android:textAlignment="center"
+        android:textColor="#ECE0E0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/numeroatividades"
+        app:layout_constraintTop_toBottomOf="@id/toolbarMenuPrincipal"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

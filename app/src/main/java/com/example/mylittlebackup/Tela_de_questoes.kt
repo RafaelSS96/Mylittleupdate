@@ -8,14 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Tela_de_questoes : AppCompatActivity() {
     private lateinit var textopergunta: TextView
+    private lateinit var umdetres: TextView
+    private lateinit var acertostela: TextView
     private lateinit var b1: Button
     private lateinit var b2: Button
     private lateinit var b3: Button
     private lateinit var b4: Button
+    private lateinit var sair: Button
     private lateinit var respostasEmbaralhadas: List<Pair<String, Int>>
 
     private var contadorPerguntas = 0
-    private var acertos = 0
+    private var pontos = 0
+
 
     private val perguntas_respostas = mapOf(
         "Qual forma geometrica possui 6 lados?" to listOf(
@@ -92,42 +96,56 @@ class Tela_de_questoes : AppCompatActivity() {
         b2 = findViewById(R.id.resposta2)
         b3 = findViewById(R.id.resposta3)
         b4 = findViewById(R.id.resposta4)
+        sair = findViewById(R.id.sair)
+        umdetres = findViewById(R.id.umdetres)
+        acertostela = findViewById(R.id.acertos)
+
+
+        val numeroperguntas = intent.getIntExtra("numeroquestoes", 3)
 
 
         gerarpergunta()
+
+        sair.setOnClickListener {
+            finish()
+        }
 
         b1.setOnClickListener {
 
             val respostaSelecionada = respostasEmbaralhadas.get(0).component2()
 
-            respostacorreta(respostaSelecionada)
+            respostacorreta(respostaSelecionada, numeroperguntas)
         }
 
         b2.setOnClickListener {
             val respostaSelecionada = respostasEmbaralhadas.get(1).component2()
 
-            respostacorreta(respostaSelecionada)
+            respostacorreta(respostaSelecionada, numeroperguntas)
         }
         b3.setOnClickListener {
             val respostaSelecionada = respostasEmbaralhadas.get(2).component2()
 
-            respostacorreta(respostaSelecionada)
+            respostacorreta(respostaSelecionada, numeroperguntas)
         }
         b4.setOnClickListener {
             val respostaSelecionada = respostasEmbaralhadas.get(3).component2()
 
-            respostacorreta(respostaSelecionada)
+            respostacorreta(respostaSelecionada, numeroperguntas)
         }
 
+        acertostela.text = pontos.toString()
 
+        umdetres.text = "Pergunta ${contadorPerguntas + 1} de $numeroperguntas"
     }
 
-    private fun respostacorreta(valor: Int) {
+    private fun respostacorreta(valor: Int, quantiaperguntas: Int) {
         if (valor == 10) {
             Toast.makeText(this, "Resposta correta!", Toast.LENGTH_SHORT).show()
-            acertos++
+            pontos++
+            acertostela.text = pontos.toString()
             contadorPerguntas++
-            if (contadorPerguntas<3) {
+            if (contadorPerguntas < quantiaperguntas) {
+            umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
                 gerarpergunta()
                 return
             }
@@ -135,7 +153,8 @@ class Tela_de_questoes : AppCompatActivity() {
         } else {
             Toast.makeText(this, "resposta errada :/", Toast.LENGTH_SHORT).show()
             contadorPerguntas++
-            if (contadorPerguntas<3) {
+            if (contadorPerguntas < quantiaperguntas) {
+                umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
                 gerarpergunta()
                 return
             }
@@ -143,7 +162,7 @@ class Tela_de_questoes : AppCompatActivity() {
     }
 
     private fun gerarpergunta() {
-        var perguntaAleatoria = perguntas_respostas.keys.random()
+        val perguntaAleatoria = perguntas_respostas.keys.random()
 
         textopergunta.text = perguntaAleatoria
 
