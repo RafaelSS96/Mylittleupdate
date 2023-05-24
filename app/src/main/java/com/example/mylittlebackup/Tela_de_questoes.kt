@@ -145,7 +145,7 @@ class Tela_de_questoes : AppCompatActivity() {
             acertostela.text = pontos.toString()
             contadorPerguntas++
             if (contadorPerguntas < quantiaperguntas) {
-            umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
+                umdetres.text = "Pergunta ${contadorPerguntas + 1} de $quantiaperguntas"
                 gerarpergunta()
                 return
             }
