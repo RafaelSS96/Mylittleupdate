@@ -109,6 +109,8 @@ class Tela_de_questoes : AppCompatActivity() {
         gerarpergunta()
 
         sair.setOnClickListener {
+            val intent = Intent(this, Tela_principal::class.java)
+            startActivity(intent)
             finish()
         }
 

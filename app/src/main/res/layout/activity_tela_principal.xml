@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:layout_marginBottom="30dp"
-        android:text="Hoje, você fez este numero de atividades:"
+        android:text="Da ultima vez, você fez este numero de atividades:"
         android:textAlignment="center"
         android:textColor="#ECE0E0"
         android:textSize="40sp"
@@ -55,7 +55,7 @@
         android:textSize="90sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tituloatividades"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/tituloatividades"/>
 
     <Button
         android:id="@+id/novaatividade"

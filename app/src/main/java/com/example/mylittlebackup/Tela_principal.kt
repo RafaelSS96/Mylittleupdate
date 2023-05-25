@@ -12,8 +12,8 @@ class Tela_principal : AppCompatActivity() {
 
     private lateinit var novaatividade: Button
     private lateinit var numeroatividades: TextView
+    private lateinit var tatividades: TextView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +22,16 @@ class Tela_principal : AppCompatActivity() {
 
         novaatividade = findViewById(R.id.novaatividade)
         numeroatividades = findViewById(R.id.numeroatividades)
+        tatividades = findViewById(R.id.totalatividades)
 
 
         var numeroQuestoes = intent.getStringExtra("numeroquestoes")
         if (numeroQuestoes == null) {
             numeroQuestoes = "3"
         }
+
+        var totalquestões = intent.getIntExtra("questoes", 0)
+        tatividades.text = totalquestões.toString()
 
         numeroatividades.text = numeroQuestoes
 
@@ -36,8 +40,9 @@ class Tela_principal : AppCompatActivity() {
 
         novaatividade.setOnClickListener {
             val intent = Intent(this, Tela_de_questoes::class.java)
-            intent.putExtra("numeroquestoes",numeroQuestoes.toInt())
+            intent.putExtra("numeroquestoes", numeroQuestoes.toInt())
             startActivity(intent)
+            finish()
         }
     }
 
