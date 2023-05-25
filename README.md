@@ -15,6 +15,8 @@ Projeto criado em kotlin para ajudar no ensino escolar
 
 0.3.2 = Correção de um bug onde a função umdetres estava sendo lida como parte da expressão gerar pergunta
 
-0.4.0= Agora foi criada a tela de resultados, que agora mostra os resultados de uma forma mais clara para o usuario. Também foram feitas diversas mudanças de desind dentro da app, entre elas cores de botões e afins.
+0.4.0 = Agora foi criada a tela de resultados, que agora mostra os resultados de uma forma mais clara para o usuario. Também foram feitas diversas mudanças de desind dentro da app, entre elas cores de botões e afins.
 
-0.4.1=  Alem de pequenas correções de bugs, foi preparada a passagem de informação entre a tela de resultados, a tela de historico e a tela principal. A quantia de perguntas respondida anteriormente agora é armazenada temporariamente.
+0.4.1 =  Alem de pequenas correções de bugs, foi preparada a passagem de informação entre a tela de resultados, a tela de historico e a tela principal. A quantia de perguntas respondida anteriormente agora é armazenada temporariamente.
+
+0.4.2 = Infelizmente a primeira remoção grande do projeto. Após varias tentativas de executar corretamente o recycledview com o intent da pagina de resultados, infelizmente não consegui passar seu conteudo para a pagina de historico então removi o caminho para ela. O codigo para esta pagina ainda está presente porem comentado na pagina de resultados, alem do codigo em si da tela de historico e seu backend. Tentativas para a fazer funcionar ficarão guardadas para o futuro.
