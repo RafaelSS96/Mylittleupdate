@@ -15,6 +15,7 @@ class Tela_de_questoes : AppCompatActivity() {
     private lateinit var b2: Button
     private lateinit var b3: Button
     private lateinit var b4: Button
+    private lateinit var pular: Button
     private lateinit var sair: Button
     private lateinit var respostasEmbaralhadas: List<Pair<String, Int>>
 
@@ -99,6 +100,7 @@ class Tela_de_questoes : AppCompatActivity() {
         b3 = findViewById(R.id.resposta3)
         b4 = findViewById(R.id.resposta4)
         sair = findViewById(R.id.sair)
+        pular = findViewById(R.id.pular)
         umdetres = findViewById(R.id.umdetres)
         acertostela = findViewById(R.id.acertos)
 
@@ -140,6 +142,22 @@ class Tela_de_questoes : AppCompatActivity() {
         acertostela.text = pontos.toString()
 
         umdetres.text = "Pergunta ${contadorPerguntas + 1} de $numeroperguntas"
+
+        pular.setOnClickListener{
+            pontos--
+            contadorPerguntas++
+            if (contadorPerguntas < numeroperguntas) {
+                umdetres.text = "Pergunta ${contadorPerguntas + 1} de $numeroperguntas"
+                acertostela.text = pontos.toString()
+                gerarpergunta()
+            } else {
+                val intent = Intent(this, Tela_resultado::class.java)
+                intent.putExtra("pontos", pontos)
+                intent.putExtra("quantiaperguntas", numeroperguntas)
+                startActivity(intent)
+                finish()
+            }
+        }
     }
 
     private fun respostacorreta(valor: Int, quantiaperguntas: Int) {

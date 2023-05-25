@@ -83,19 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/botaohistorico"
-        android:layout_width="166dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#85000000"
-        android:text="Historico de resultados"
-        android:textColor="#DCD7D7"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 
