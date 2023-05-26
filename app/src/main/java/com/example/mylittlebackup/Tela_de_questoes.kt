@@ -7,7 +7,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+// tela de questões, o grosso do codigo esta aqui.
+
 class Tela_de_questoes : AppCompatActivity() {
+
+    // declaração das variaveis, separadas por variaveis private lateinit e as variaveis apenas privadas.
+
     private lateinit var textopergunta: TextView
     private lateinit var umdetres: TextView
     private lateinit var acertostela: TextView
@@ -23,6 +28,10 @@ class Tela_de_questoes : AppCompatActivity() {
     private var pontos = 0
     private var perguntasFeitas = mutableSetOf<String>()
 
+    // neste mapa é onde são definidas as questões que o usuario vai responder, foi colocado um valor de 10 na
+    // resposta correta justamente para permitir que quando digitado novas questões, se possa colocar
+    // a resposta correta em qualquer uma das quatro opções, mas sempre sera verificado como
+    // verdadeiro a resposta com valor 10.
 
     private val perguntas_respostas = mapOf(
         "Qual forma geometrica possui 6 lados?" to listOf(
@@ -94,6 +103,8 @@ class Tela_de_questoes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_de_questoes)
 
+        // ligação entre os valores das variaveis e seus elementos de frontend.
+
         textopergunta = findViewById(R.id.questao)
         b1 = findViewById(R.id.resposta1)
         b2 = findViewById(R.id.resposta2)
@@ -104,17 +115,25 @@ class Tela_de_questoes : AppCompatActivity() {
         umdetres = findViewById(R.id.umdetres)
         acertostela = findViewById(R.id.acertos)
 
+        // passagem do numero de questões da tela principal pra ca
 
         val numeroperguntas = intent.getIntExtra("numeroquestoes", 3)
 
+        // função gerar pergunta, como comentado mais abaixo, esta função faz a escolha da pergunta
+        // e tambem exclui a pergunta ja feita.
 
         gerarpergunta()
+
+        // botão de sair, que trás de volta o usuario para a tela principal
 
         sair.setOnClickListener {
             val intent = Intent(this, Tela_principal::class.java)
             startActivity(intent)
             finish()
         }
+
+        // estabelecimento dos 4 botões. a função get para pegar da lista respostas embaralhadas,
+        // e a função resposta correta que faz a verificação.
 
         b1.setOnClickListener {
 
@@ -139,11 +158,16 @@ class Tela_de_questoes : AppCompatActivity() {
             respostacorreta(respostaSelecionada, numeroperguntas)
         }
 
+        // funções que exibem ao usuario quantos acertos ele fez e quantas perguntas ele ja respondeu
+
         acertostela.text = pontos.toString()
 
         umdetres.text = "Pergunta ${contadorPerguntas + 1} de $numeroperguntas"
 
-        pular.setOnClickListener{
+        // como ultima adição, função pular. Ao preço de um ponto, o usuario pode trocar sua pergunta.
+        // por causa dessa função, fica possivel o usuario negativar o teste.
+
+        pular.setOnClickListener {
             pontos--
             contadorPerguntas++
             if (contadorPerguntas < numeroperguntas) {
@@ -159,6 +183,12 @@ class Tela_de_questoes : AppCompatActivity() {
             }
         }
     }
+
+    // função resposta correta, exibe um toast de acordo se a resposta foi certa ou n, aumenta o
+    // contador de perguntas e por fim, compara se o usuario ja fez todas as questões
+    // que selecionou no começo. se sim, passa para resultados. se não, nova pergunta.
+    // Também é feito aqui a atualização dos elementos visuais, como os acertos na tela e contador
+    // de perguntas.
 
     private fun respostacorreta(valor: Int, quantiaperguntas: Int) {
         if (valor == 10) {
@@ -182,6 +212,9 @@ class Tela_de_questoes : AppCompatActivity() {
             finish()
         }
     }
+
+    // função gerar pergunta, aqui a pergunta é escolhida aleatoriamente, é salva as chaves ja usadas,
+    // são separadas e por fim as respostas são embaralhadas.
 
     private fun gerarpergunta() {
         val perguntaAleatoria = perguntas_respostas.keys.subtract(perguntasFeitas).random()

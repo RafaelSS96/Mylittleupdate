@@ -13,26 +13,25 @@
         android:layout_height="wrap_content"
         android:text="MY LITTLE BACKUP"
         android:textAlignment="center"
-        android:textColor="#078BF4"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@id/buttonmain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
-
-    <Button
-        android:id="@+id/buttonmain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:backgroundTint="#85000000"
+        android:textStyle="bold"
         android:textColor="#DCD7D7"
-        android:text="INICIAR"
-        android:textSize="25sp"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iconetela"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iconetela"
+        android:layout_width="413dp"
+        android:layout_height="422dp"
+        android:src="@drawable/estudo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textmain"
+
+        ></androidx.constraintlayout.utils.widget.ImageFilterView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

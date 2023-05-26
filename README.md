@@ -20,3 +20,7 @@ Projeto criado em kotlin para ajudar no ensino escolar
 0.4.1 =  Alem de pequenas correções de bugs, foi preparada a passagem de informação entre a tela de resultados, a tela de historico e a tela principal. A quantia de perguntas respondida anteriormente agora é armazenada temporariamente.
 
 0.4.2 = Infelizmente a primeira remoção grande do projeto. Após varias tentativas de executar corretamente o recycledview com o intent da pagina de resultados, infelizmente não consegui passar seu conteudo para a pagina de historico então removi o caminho para ela. O codigo para esta pagina ainda está presente porem comentado na pagina de resultados, alem do codigo em si da tela de historico e seu backend. Tentativas para a fazer funcionar ficarão guardadas para o futuro.
+
+1.0.0 = Acredito que finalmente estou na versão final deste projeto antes da entrega. Depois de fazer checagem de bugs, confesso que encontrei um que me incomodou, onde a informação de quantas atividades foram feitas anteriormente quando se muda de atividade para a atividade config, porem deixarei como está. 
+
+Fiz as remoções de conteudo que acredito serem descenessarios na app, assim como comentei todo seu codigo. Acredito estar satisfeito com meu resultado.

@@ -2,12 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/help"
-        android:icon="@drawable/ajuda"
-        android:title="ajuda"
-        android:tooltipText="Ajuda do app."
-        app:showAsAction="always"></item>
 
     <item
         android:id="@+id/configuracao"
@@ -20,7 +14,7 @@
         android:id="@+id/deslogar"
         android:icon="@drawable/logout"
         android:title="Sair"
-        app:showAsAction="ifRoom"></item>
+        app:showAsAction="ifRoom"/>
 
 
 </menu>
